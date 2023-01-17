@@ -1,0 +1,19 @@
+{
+	"extends": [
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:@angular-eslint/recommended"
+	],
+	"overrides": [
+		{
+			"files": ["*.ts", "*.component.html", "*.component.ts"],
+			"parserOptions": {
+				"project": ["./tsconfig.json"],
+				"extraFileExtensions": [".html"]
+			},
+			"rules": { "@typescript-eslint/prefer-nullish-coalescing": "error" }
+		}
+	],
+	"parser": "@typescript-eslint/parser"
+}

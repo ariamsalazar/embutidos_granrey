@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+body {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+@layer base {
+	@font-face {
+		font-family: 'StardosStencil';
+		src: url('/fonts/Stardos_Stencil/StardosStencil-Bold.ttf');
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'StardosStencil';
+		src: url('/fonts/Stardos_Stencil/StardosStencil-Regular.ttf');
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Tahoma';
+		src: url('/fonts/Tahoma/Tahoma-Regular.ttf');
+		font-style: normal;
+		font-weight: 300;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Tahoma';
+		src: url('/fonts/Tahoma/Tahoma-Bold-Regular.ttf');
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Tahoma';
+		src: url('/fonts/Tahoma/Tahoma-Bold.ttf');
+		font-style: normal;
+		font-weight: 500;
+		font-display: swap;
+	}
+
+	body {
+		@apply bg-white font-sans leading-normal text-base tracking-normal;
+		font-family: Tahoma, sans-serif;
+	}
+
+	h1 {
+		@apply text-5xl md:text-6xl tracking-tighter my-6;
+		font-family: StardosStencil, sans-serif;
+	}
+
+	h2 {
+		@apply text-4xl md:text-5xl tracking-tighter my-6;
+		font-family: StardosStencil, sans-serif;
+	}
+
+	h3 {
+		@apply text-3xl md:text-4xl tracking-tighter my-6;
+		font-family: StardosStencil, sans-serif;
+	}
+
+	h4,
+	h5,
+	h6 {
+		@apply tracking-tighter text-2xl font-extralight;
+		font-family: StardosStencil, sans-serif;
+		font-weight: 300;
+	}
+}
