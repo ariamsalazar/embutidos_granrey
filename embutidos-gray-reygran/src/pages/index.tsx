@@ -1,5 +1,11 @@
-import React from 'react';
+import WhoWeAre from 'components/who';
 import Head from 'next/head';
+import Main from '../../components/main';
+import Products from '../../components/products';
+import History from '../../components/history';
+import Footer from '../../components/footer/footer';
+import Social from 'components/social';
+import Contact from 'components/contact';
 
 function Home(): JSX.Element {
 	return (
@@ -14,14 +20,16 @@ function Home(): JSX.Element {
 					name='viewport'
 					content='width=device-width, initial-scale=1'
 				/>
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/images/favicon.png' />
 			</Head>
 			<main>
-				Embutidos Gran Rey
-				<div className='text-3xl text-red-dark p-2'>
-					<h3>Testing Tailwincd Css</h3>
-					<span>Subtitles Title Test</span>
-				</div>
+				<Main />
+				<Products />
+				<WhoWeAre />
+				<History />
+				<Social />
+				<Contact />
+				<Footer />
 			</main>
 		</>
 	);
