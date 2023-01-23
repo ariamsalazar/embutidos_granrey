@@ -1,15 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import s from 'csd';
-import SubtitleComponent from '../common/subtitle';
-import TitleComponent from '../common/title';
-
-import {
-	CategoryOne,
-	CategorySecond,
-	CategoryThird,
-	CategoryFourth,
-} from './products_items';
+import CarouselHistoryItems from './carousel_history_items';
 
 const StyledTabIndicator = styled.div`
 	position: absolute;
@@ -33,13 +25,12 @@ const StyledTab = styled.li`
 		cursor: pointer;
 		transition: color 0.3s;
 		color: ${(props: { isFocused: boolean }) =>
-			props.isFocused ? '#A10010' : '#000'};
+			props.isFocused ? '#000' : '#777'};
 		border-bottom: ${(props: { isFocused: boolean }) =>
-			props.isFocused ? '2px solid #A10010' : '2px solid black'};
+			props.isFocused ? '2px solid black' : '2px solid red'};
 		width: 100%;
 		height: 100%;
 		padding-bottom: 6px;
-		font-weigth: bold;
 	}
 `;
 
@@ -108,34 +99,27 @@ const Sliders = ({ focusedIdx, children, duration = 300 }: any): any => {
 	);
 };
 
-export default function CarouselProduct(): JSX.Element {
+export default function CarouselHistory(): JSX.Element {
 	const [focusedIdx, setFocusedIdx] = React.useState(0);
 
 	return (
-		<>
-			<div className='App md:flex w-full md:items-end mb-5 md:justify-between'>
-				<div className='w-full md:w-[40%] p-4 md:p-0'>
-					<SubtitleComponent titleText='Products' color='black' />
-					<TitleComponent
-						titleText='CÁTALOGO NUEVO DE PRODUCTOS'
-						classNameText='text-red-dark text-[48px] md:text-[54px] mt-4'
-					/>
-				</div>
-				<div className='w-[90%] ml-[5%] md:ml-0 md:w-[50%] lg:w-[40%]'>
-					<Tabs focusedIdx={focusedIdx} onChange={setFocusedIdx}>
-						<Tab title='Categoria 1' />
-						<Tab title='Categoria 2' />
-						<Tab title='Categoria 3' />
-						<Tab title='Categoria 4' />
-					</Tabs>
-				</div>
+		<div className='App'>
+			<div className='w-[60%]'>
+				<Tabs focusedIdx={focusedIdx} onChange={setFocusedIdx}>
+					<Tab title='History 1' />
+					<Tab title='History 2' />
+					<Tab title='History 3' />
+					<Tab title='History 4' />
+					<Tab title='History 5' />
+				</Tabs>
 			</div>
 			<Sliders focusedIdx={focusedIdx}>
-				<CategoryOne />
-				<CategorySecond />
-				<CategoryThird />
-				<CategoryFourth />
+				<CarouselHistoryItems date='' textHistory='1' photoHistory='' />
+				<CarouselHistoryItems date='' textHistory='2' photoHistory='' />
+				<CarouselHistoryItems date='' textHistory='3' photoHistory='' />
+				<CarouselHistoryItems date='' textHistory='4' photoHistory='' />
+				<CarouselHistoryItems date='' textHistory='5' photoHistory='' />
 			</Sliders>
-		</>
+		</div>
 	);
 }

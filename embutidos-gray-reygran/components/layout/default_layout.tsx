@@ -10,7 +10,7 @@ function DefaultLayout(props: DefaultProps): JSX.Element {
 
 	return (
 		<div
-			className={`${className} container mx-auto xs:px-2 xl:max-w-[1280px] bg-white py-12`}
+			className={`${className} container mx-auto xs:px-2 xl:max-w-[1280px] py-12`}
 		>
 			{children}
 		</div>

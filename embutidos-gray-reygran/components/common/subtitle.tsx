@@ -8,7 +8,9 @@ function SubtitleComponent(props: SubtitleProps): JSX.Element {
 
 	return (
 		<>
-			<div className={`w-[27px] h-auto border-y-2 mb-1 text-${color}`} />
+			<div
+				className={`w-[25px] h-auto border-y-[2px] mb-1 text-${color}`}
+			/>
 			<span className={`font-normal text-[16px] text-${color}`}>
 				{titleText}
 			</span>

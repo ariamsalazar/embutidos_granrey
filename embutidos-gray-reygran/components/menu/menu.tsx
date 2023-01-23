@@ -4,14 +4,14 @@ import Logo from '../../public/images/Logo.png';
 
 function Menu(): JSX.Element {
 	return (
-		<div className='absolute top-[30px] right-[20px] flex items-center w-[80%] justify-between w-[95%] md:w-[90%] lg:w-[85%]'>
-			<div className=' w-[10%]'>
+		<div className='absolute top-[30px] right-0 md:right-[20px] flex items-center justify-between w-[100%] md:w-[90%] lg:w-[85%]'>
+			<div className='w-[10%]'>
 				<Image
 					src={Logo}
 					alt='Logo Embutidos Gran Rey'
 					width={62}
 					height={73}
-					className='mr-12'
+					className='mr-0 ml-5 md:ml-0 md:mr-12'
 				/>
 			</div>
 			<div className='w-[90%] bg-yellow text-right'>
@@ -29,6 +29,7 @@ function Menu(): JSX.Element {
 					textLink='Historia'
 					hrefLink='/quienes-somos'
 					active={false}
+					hidden
 				/>
 				<LinkComponent
 					textLink='Redes'
