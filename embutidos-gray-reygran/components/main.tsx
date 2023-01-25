@@ -11,7 +11,7 @@ function Main(): JSX.Element {
 	};
 	return (
 		<div className='h-[100vh] flex'>
-			<div className='w-0 lg:w-[40%] bg-yellow-dark h-full'>
+			<div className='w-0 lg:w-[40%] bg-gray-dark h-full'>
 				<Image
 					src={MainImage}
 					alt='Main Embutidos Gran Rey'

@@ -1,21 +1,9 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import styled from 'styled-components';
 import s from 'csd';
 import CarouselHistoryItems from './carousel_history_items';
-
-const StyledTabIndicator = styled.div`
-	position: absolute;
-	width: ${props => 100 / props.tabCount}%;
-	top: 100%;
-	left: 0;
-
-	transform: translate(${props => props.offset}, -100%);
-
-	transition: transform ${props => props.duration}ms;
-
-	border-top-style: solid;
-	border-top-width: 1px;
-`;
+import { dates } from '../../components/data/history';
 
 const StyledTab = styled.li`
 	flex: 1;
@@ -25,19 +13,26 @@ const StyledTab = styled.li`
 		cursor: pointer;
 		transition: color 0.3s;
 		color: ${(props: { isFocused: boolean }) =>
-			props.isFocused ? '#000' : '#777'};
+			props.isFocused ? '#D50000' : '#000'};
 		border-bottom: ${(props: { isFocused: boolean }) =>
-			props.isFocused ? '2px solid black' : '2px solid red'};
+			props.isFocused ? '2px solid black' : '2px solid #d50000'};
 		width: 100%;
 		height: 100%;
-		padding-bottom: 6px;
+		padding-bottom: 10px;
+		font-weight: ${(props: { isFocused: boolean }) =>
+			props.isFocused ? 'bold' : 'normal'};
 	}
 `;
 
-const Tab = ({ title, onClick, isFocused }: any): JSX.Element => {
+const Tab = ({ title, date, onClick, isFocused }: any): JSX.Element => {
 	return (
-		<StyledTab onClick={onClick} isFocused={isFocused}>
-			<button>{title}</button>
+		<StyledTab onClick={onClick} isFocused={isFocused} className='button-c'>
+			<h1 className='w-full text-red text-center block font-bold text-[14px] my-0'>
+				{date}
+			</h1>
+			<button className='font-[15px] !font-light text-center'>
+				{title}
+			</button>
 		</StyledTab>
 	);
 };
@@ -61,14 +56,10 @@ const Tabs = ({ focusedIdx, children, onChange, duration = 300 }: any): any => {
 					},
 				})
 			)}
-			<StyledTabIndicator
-				duration={duration}
-				tabCount={children.length}
-				offset={`${100 * focusedIdx}%`}
-			/>
 		</StyledTabs>
 	);
 };
+
 const StyledOuterSliders = styled.div`
 	overflow: hidden;
 `;
@@ -77,10 +68,8 @@ const StyledSliders = styled.div`
 	display: flex;
 	flex-wrap: no-wrap;
 	width: 100%;
-
 	transform: translateX(${(props: any) => `${props.offset}%`});
 	transition: transform ${(props: any) => props.duration}ms;
-
 	div {
 		flex-shrink: 0;
 		width: 100%;
@@ -104,21 +93,22 @@ export default function CarouselHistory(): JSX.Element {
 
 	return (
 		<div className='App'>
-			<div className='w-[60%]'>
+			<div className='w-[100%]'>
 				<Tabs focusedIdx={focusedIdx} onChange={setFocusedIdx}>
-					<Tab title='History 1' />
-					<Tab title='History 2' />
-					<Tab title='History 3' />
-					<Tab title='History 4' />
-					<Tab title='History 5' />
+					{dates?.map(date => {
+						return <Tab title={date.event} date={date.date} />;
+					})}
 				</Tabs>
 			</div>
 			<Sliders focusedIdx={focusedIdx}>
-				<CarouselHistoryItems date='' textHistory='1' photoHistory='' />
-				<CarouselHistoryItems date='' textHistory='2' photoHistory='' />
-				<CarouselHistoryItems date='' textHistory='3' photoHistory='' />
-				<CarouselHistoryItems date='' textHistory='4' photoHistory='' />
-				<CarouselHistoryItems date='' textHistory='5' photoHistory='' />
+				{dates?.map(date => {
+					return (
+						<CarouselHistoryItems
+							description={date.description}
+							image={date.image}
+						/>
+					);
+				})}
 			</Sliders>
 		</div>
 	);

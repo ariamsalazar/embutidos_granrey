@@ -1,26 +1,18 @@
 interface CarouselProductHistoryProps {
-	date: string;
-	textHistory: string;
-	photoHistory: string;
+	description: string;
+	image: string;
 }
 function CarouselHistoryItems(props: CarouselProductHistoryProps): JSX.Element {
-	const { date, textHistory, photoHistory } = props;
+	const { description, image } = props;
 	return (
-		<div className='flex w-full space-around'>
-			{/* //TO DO: MAP FILTER BY CATEGORY */}
-			<div className='!w-[20%] h-[100px] bg-red-dark'>
-				{date} {textHistory} {photoHistory}
-			</div>
-			<div className='!w-[20%] h-[100px] bg-red-dark'>
-				{date} {textHistory} {photoHistory}
-			</div>
-
-			<div className='!w-[20%] h-[100px] bg-red-dark'>
-				{date} {textHistory} {photoHistory}
-			</div>
-			<div className='!w-[20%] h-[100px] bg-red-dark'>
-				{date} {textHistory} {photoHistory}
-			</div>
+		<div className='flex w-full space-around md:text-[14px] lg:text-[16px] mt-12 justify-around'>
+			<div className='!w-[45%]'>{description}</div>
+			<div
+				className='!w-[45%] bg-history-item md:h-[150px] lg:h-[200px]'
+				style={{
+					backgroundImage: `url(/images/${image})`,
+				}}
+			/>
 		</div>
 	);
 }

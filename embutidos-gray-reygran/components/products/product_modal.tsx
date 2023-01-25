@@ -24,8 +24,9 @@ const style = {
 	width: '820px',
 	height: '700px',
 	borderRadius: '8px',
-	border: 'none !important',
+	border: '0px solid #000',
 	p: 4,
+	outline: 'none',
 };
 
 function ProductModal(props: ModalProps): JSX.Element {

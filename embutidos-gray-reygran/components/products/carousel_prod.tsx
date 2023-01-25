@@ -11,20 +11,6 @@ import {
 	CategoryFourth,
 } from './products_items';
 
-const StyledTabIndicator = styled.div`
-	position: absolute;
-	width: ${props => 100 / props.tabCount}%;
-	top: 100%;
-	left: 0;
-
-	transform: translate(${props => props.offset}, -100%);
-
-	transition: transform ${props => props.duration}ms;
-
-	border-top-style: solid;
-	border-top-width: 1px;
-`;
-
 const StyledTab = styled.li`
 	flex: 1;
 	height: 100%;
@@ -70,11 +56,6 @@ const Tabs = ({ focusedIdx, children, onChange, duration = 300 }: any): any => {
 					},
 				})
 			)}
-			<StyledTabIndicator
-				duration={duration}
-				tabCount={children.length}
-				offset={`${100 * focusedIdx}%`}
-			/>
 		</StyledTabs>
 	);
 };
