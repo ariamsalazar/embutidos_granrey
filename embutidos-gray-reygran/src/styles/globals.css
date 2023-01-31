@@ -266,3 +266,22 @@ body {
 	background-size: 25px;
 	padding-left: 40px;
 }
+
+.bg-gray-contact {
+	background-image: url('/images/contact-background.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bg-gray-footer {
+	background-image: url('/images/footer.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bg-trans {
+	background-color: transparent !important;
+}

@@ -10,7 +10,7 @@ function Contact(): JSX.Element {
 		if (newWindow != null) newWindow.opener = null;
 	};
 	return (
-		<div className='bg-white w-full h-auto'>
+		<div className='bg-gray-contact w-full h-auto'>
 			<DefaultLayout className='h-[auto] py-12 md:flex md:justify-between items-end'>
 				<div className='w-[90%] ml-[5%] lg:ml-0 md:w-[48%] lg:w-[45%]'>
 					<div className='flex w-full pl-4 md:pl-8 items-center justify-start'>
@@ -30,13 +30,13 @@ function Contact(): JSX.Element {
 						<FormComponent />
 					</div>
 				</div>
-				<div className='w-[90%] ml-[5%] lg:ml-0 md:w-[48%] lg:w-[45%] mt-10 md:mt-0'>
+				<div className='w-[90%] ml-[5%] lg:w-[45%] mt-10 md:mt-0'>
 					<SubtitleComponent titleText='Contacto' color='black' />
 					<TitleComponent
 						titleText='PONTE EN CONTACTO CON NOSOTROS'
 						classNameText='text-red text-[48px] md:text-[50px] lg:text-[54px] mt-4'
 					/>
-					<div className='border-l-2 border-l-gray-light mt-8 pt-4 pr-4 pl-10'>
+					<div className='border-l-2 border-l-gray-dark mt-8 pt-4 pr-4 pl-10'>
 						<span className='text-red-dark text-[16px] md:text-[14px] font-bold'>
 							¿D&oacute;nde estamos?
 						</span>

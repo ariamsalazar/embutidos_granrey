@@ -1,25 +1,41 @@
-import Link from 'next/link';
+import AnchorLink from 'react-anchor-link-smooth-scroll-v2';
 
 interface LinkProps {
 	textLink: string;
-	active: boolean;
+	show: boolean;
 	hrefLink: string;
 	hidden?: boolean;
+	onMouseEnter: () => void;
+	onMouseLeave: () => void;
 }
 
 function LinkComponent(props: LinkProps): JSX.Element {
-	const { hrefLink, textLink, active, hidden } = props;
+	const { hrefLink, textLink, show, hidden, onMouseEnter, onMouseLeave } =
+		props;
+	console.log(show);
 
 	return (
-		<Link
+		<AnchorLink
+			className={`relative text-white font-thin text-sm mr-4 md:mr-8 ${
+				hidden ?? false ? 'hidden' : ''
+			}`}
 			href={hrefLink}
-			className={`text-white font-thin text-sm mr-4 md:mr-8 ${
-				active ? 'text-red font-bold' : ''
-			} ${hidden ?? false ? 'hidden' : ''}`}
+			onMouseEnter={() => {
+				onMouseEnter();
+			}}
+			onMouseLeave={() => {
+				onMouseLeave();
+			}}
 		>
-			{/* {active && <div className='w-[10px] h-[5px] bg-red-dark' />} */}
-			{textLink}
-		</Link>
+			<span className={`relative pt-2 ${show ? 'text-red' : ''}`}>
+				{show && (
+					<>
+						<div className='w-[20px] h-auto border-y-[2px] mb-1 text-red left-0 top-0 absolute' />
+					</>
+				)}
+				{textLink}
+			</span>
+		</AnchorLink>
 	);
 }
 

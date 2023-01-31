@@ -17,13 +17,13 @@ function InputComponent(props: InputProps): JSX.Element {
 			{!(textArea ?? false) ? (
 				<>
 					<input
-						className={`${className} border-b-2	border-b-black outline-0 font-light text-[15px] md:text-[13px] w-full pb-1`}
+						className={`${className} border-b-2	border-b-black outline-0 font-light text-[15px] md:text-[13px] w-full pb-1 bg-trans`}
 					/>
 				</>
 			) : (
 				<>
 					<textarea
-						className={`${className} border-b-2	border-b-black outline-0 font-light text-[15px] md:text-[13px] w-full h-[100px]`}
+						className={`${className} bg-trans border-b-2	border-b-black outline-0 font-light text-[15px] md:text-[13px] w-full h-[100px]`}
 					></textarea>
 				</>
 			)}

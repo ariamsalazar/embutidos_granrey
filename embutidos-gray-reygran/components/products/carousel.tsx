@@ -23,10 +23,12 @@ function Carousel(props: CarouselProductProps): JSX.Element {
 		<>
 			<div className='flex w-full space-around justify-around mt-5 md:mt-10 overflow-hidden'>
 				{/* //TO DO: MAP FILTER BY CATEGORY */}
-				{items?.map(() => {
+				{items?.map(key => {
 					return (
-						// eslint-disable-next-line react/jsx-key
-						<div className='!w-[20%] h-auto cursor-pointer'>
+						<div
+							className='!w-[20%] h-auto cursor-pointer'
+							key={category}
+						>
 							<div
 								onClick={handleOpen}
 								className='prod-item !w-[100%] h-[80px] md:h-[230px] rounded-[6px] bg-prod-item hover:opacity-[70%]'

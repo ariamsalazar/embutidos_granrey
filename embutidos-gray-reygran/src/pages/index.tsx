@@ -6,6 +6,7 @@ import History from '../../components/history';
 import Footer from '../../components/footer/footer';
 import Social from 'components/social';
 import Contact from 'components/contact';
+import Menu from 'components/menu/menu';
 
 function Home(): JSX.Element {
 	return (
@@ -22,13 +23,24 @@ function Home(): JSX.Element {
 				/>
 				<link rel='icon' href='/images/favicon.png' />
 			</Head>
-			<main>
+			<main className='relative'>
+				<Menu />
 				<Main />
-				<Products />
-				<WhoWeAre />
-				<History />
-				<Social />
-				<Contact />
+				<div id='product'>
+					<Products />
+				</div>
+				<div id='whoweare'>
+					<WhoWeAre />
+				</div>
+				<div id='history'>
+					<History />
+				</div>
+				<div id='social'>
+					<Social />
+				</div>
+				<div id='contact'>
+					<Contact />
+				</div>
 				<Footer />
 			</main>
 		</>

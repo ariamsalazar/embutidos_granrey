@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import TitleComponent from '../components/common/title';
-import Menu from '../components/menu/menu';
 import MainImage from '../public/images/mainImage.jpg';
 import ButtonComponent from '../components/common/button';
 
@@ -21,7 +20,6 @@ function Main(): JSX.Element {
 				/>
 			</div>
 			<div className='w-full lg:w-[60%] background-main h-full relative'>
-				<Menu />
 				<div className='h-auto w-[95%] md:w-[90%] lg:w-[85%] absolute right-0 md:right-[20px] top-[35%]'>
 					<TitleComponent
 						titleText='Ordena tu'
