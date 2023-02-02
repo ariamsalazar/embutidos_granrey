@@ -1,19 +1,8 @@
-import { useState } from 'react';
 import LinkComponent from 'components/common/link';
 import Image from 'next/image';
 import Logo from '../../public/images/old_logo.png';
 
 function Menu(): JSX.Element {
-	const [show, setIsShown] = useState<boolean>(false);
-
-	const onMouseEnter = (): any => {
-		setIsShown(true);
-	};
-
-	const onMouseLeave = (): any => {
-		setIsShown(false);
-	};
-
 	return (
 		<div className='absolute top-[30px] right-0 md:right-[20px] flex items-center justify-between w-[100%] md:w-[90%] lg:w-[50%] z-10'>
 			<div className='w-[10%]'>
@@ -26,41 +15,11 @@ function Menu(): JSX.Element {
 				/>
 			</div>
 			<div className='w-[90%] bg-yellow text-right'>
-				<LinkComponent
-					textLink='Productos'
-					hrefLink='#product'
-					show={show}
-					onMouseEnter={onMouseEnter}
-					onMouseLeave={onMouseLeave}
-				/>
-				<LinkComponent
-					textLink='Quienes somos'
-					hrefLink='#whoweare'
-					show={show}
-					onMouseEnter={onMouseEnter}
-					onMouseLeave={onMouseLeave}
-				/>
-				<LinkComponent
-					textLink='Historia'
-					hrefLink='#history'
-					show={show}
-					onMouseEnter={onMouseEnter}
-					onMouseLeave={onMouseLeave}
-				/>
-				<LinkComponent
-					textLink='Redes'
-					hrefLink='#social'
-					show={show}
-					onMouseEnter={onMouseEnter}
-					onMouseLeave={onMouseLeave}
-				/>
-				<LinkComponent
-					textLink='Contacto'
-					hrefLink='#contact'
-					show={show}
-					onMouseEnter={onMouseEnter}
-					onMouseLeave={onMouseLeave}
-				/>
+				<LinkComponent textLink='Productos' hrefLink='#product' />
+				<LinkComponent textLink='Quienes somos' hrefLink='#whoweare' />
+				<LinkComponent textLink='Historia' hrefLink='#history' />
+				<LinkComponent textLink='Redes' hrefLink='#social' hidden />
+				<LinkComponent textLink='Contacto' hrefLink='#contact' />
 			</div>
 		</div>
 	);

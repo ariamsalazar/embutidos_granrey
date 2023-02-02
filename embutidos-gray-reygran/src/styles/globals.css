@@ -285,3 +285,13 @@ body {
 .bg-trans {
 	background-color: transparent !important;
 }
+
+.link-ancho {
+	padding-bottom: 5px;
+}
+
+.link-anchor:hover {
+	color: #d29308;
+	border-bottom: 1px solid #d29308;
+	transition: 0.2s;
+}

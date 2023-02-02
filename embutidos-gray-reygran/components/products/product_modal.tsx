@@ -87,7 +87,7 @@ function ProductModal(props: ModalProps): JSX.Element {
 							<div className='h-[40px] w-[20%] bg-presentation' />
 							<div className='h-[40px] w-[80%]'>
 								<span className='uppercase text-gray-light text-[12px] w-full block'>
-									Presentac&oacute;on
+									Presentaci&oacute;n
 								</span>
 								<span className='text-white font-light text-[12px] w-full block'>
 									{presentation}
